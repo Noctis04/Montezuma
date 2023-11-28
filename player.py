@@ -34,9 +34,6 @@ class Player(GameObject):
         elif self.key_pressed(KEY_RIGHT):
             self.velocity_x = self.speed_x
             self.sprite.flip_x = False
-        #else:
-        #    self.velocity_x = 0
-
         super().update()
 
     def handle_collision(self, other_object):
@@ -50,4 +47,3 @@ class Player(GameObject):
             if other_object in self.world.objects:
                 other_object.death()
             print("Игрок столкнулся с черепом!")
-
