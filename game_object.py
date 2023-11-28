@@ -95,12 +95,10 @@ class GameObject(State):
         :param other_object: Другой объект GameObject для проверки столкновения.
         :return: True, если есть столкновение, в противном случае - False..
         """
-        if (
-                self.x < other_object.x + other_object.width
+        if (self.x < other_object.x + other_object.width
                 and self.x + self.width > other_object.x
                 and self.y < other_object.y + other_object.height
-                and self.y + self.height > other_object.y
-        ):
+                and self.y + self.height > other_object.y):
             return True
         return False
 

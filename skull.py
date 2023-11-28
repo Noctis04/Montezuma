@@ -42,17 +42,3 @@ class Skull (GameObject):
     def death(self):
         self.world.remove_object(self)
         remove_sprite(self)
-
-
-
-
-
-    # def handle_collision(self, other_object):
-    #     """
-    #     Определение поведения при столкновении с другим объектом GameObject.
-    #
-    #     :param other_object: Другой объект GameObject, участвующий в столкновении.
-    #     """
-    #     if isinstance(other_object, Player):
-    #         # Определите поведение при столкновении с игроком
-    #         print("Череп столкнулся с игроком!")
