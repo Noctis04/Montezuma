@@ -1,9 +1,9 @@
 from game_object import GameObject
 from animation import Animation
-from graphics import remove_sprite
+import graphics as gr
 
 class Skull (GameObject):
-    speed_x = 3
+    speed_x = 2
 
     def __init__(self, world, pos_x, pos_y):
         self.animation_frames = [
@@ -33,7 +33,7 @@ class Skull (GameObject):
 
     def move(self, speed, dx, new_state):
         self.velocity_x = speed
-        if not self.on_ground():
+        if not self.on_ground() or self.x == 0 or self.x == gr.window_width:
             self.x -= dx
             self.set_state(new_state)
             self.sprite.back = not self.sprite.back
@@ -41,4 +41,4 @@ class Skull (GameObject):
    
     def death(self):
         self.world.remove_object(self)
-        remove_sprite(self)
+        gr.remove_sprite(self)

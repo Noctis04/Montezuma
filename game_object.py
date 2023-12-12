@@ -83,6 +83,8 @@ class GameObject(State):
         x = self.x + self.width / 2
         y = int(self.y + self.height)
         tile = self.world.get_tile(x, y)
+        if tile is None:
+            return
         while tile != 0:
             y -= 1
             tile = self.world.get_tile(x, y)
@@ -116,17 +118,19 @@ class GameObject(State):
         """
         x_right = int(self.x + self.width)
         x_left = int(self.x)
-        y_bottom = int(self.y + self.height / 2)
-        if not self.is_on_air:
-            if self.velocity_x > 0 and self.world.get_tile(x_right, y_bottom) != 0:  # Движение вправо
-                while self.world.get_tile(x_right, y_bottom) != 0:
-                    x_right -= 1
-                self.x = x_right - self.width
-                self.velocity_x = 0
-            elif self.velocity_x < 0 and self.world.get_tile(x_left, y_bottom) != 0:  # Движение влево
-                while self.world.get_tile(x_left, y_bottom) != 0:
-                    x_left += 1
-                self.x = x_left + 1  # Изменено на x_left + 1
+        y_bottom = int(self.y + self.height - 1)
+        if self.velocity_x > 0 and self.world.get_tile(x_right, y_bottom) == 0:
+            return
+        if self.velocity_x < 0 and self.world.get_tile(x_left, y_bottom) == 0:
+            return
+        if self.velocity_x > 0 and self.world.get_tile(x_right, y_bottom) != 0:  # Движение вправо
+            x_right -= self.velocity_x
+            self.x = x_right - self.width - 1
+            self.velocity_x = 0
+        elif self.velocity_x < 0 and self.world.get_tile(x_left, y_bottom) != 0:  # Движение влево
+            x_left -= self.velocity_x
+            self.x = x_left
+
 
 
     def apply_friction(self):

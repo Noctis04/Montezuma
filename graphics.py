@@ -5,6 +5,7 @@ from sprite import Sprite
 KEY_LEFT = SDLK_LEFT
 KEY_RIGHT = SDLK_RIGHT
 KEY_UP = SDLK_UP
+KEY_SPACE = SDLK_SPACE
 
 RESOURCES = None
 SPRITES = "Images"
@@ -20,7 +21,8 @@ tile_width = 8
 tile_height = 8
 tiles_count_w = 0
 tiles_count_h = 0
-FRAME = 5
+FRAME = 30
+SCALE = 4 # коэффициент маштабирования графики
 
 def init(width, height):
     """
@@ -31,7 +33,7 @@ def init(width, height):
     window_width = width
     sdl2.ext.init()
     RESOURCES = sdl2.ext.Resources(__file__, SPRITES)
-    window = sdl2.ext.Window("Platformer", size=(window_width, window_height))
+    window = sdl2.ext.Window("Platformer", size=(window_width * SCALE, window_height * SCALE))
     window.show()
     renderer = SDL_CreateRenderer(window.window, -1, SDL_RENDERER_ACCELERATED)
 def set_tiles(tile_map_data, tiles_image):
@@ -82,8 +84,8 @@ def draw_all():
                 cell = tile_map[y][x]
                 SDL_RenderCopy(renderer, tiles,
                                 SDL_Rect(cell * tile_width, 0, tile_width, tile_height),
-                                SDL_Rect(x * tile_width, y * tile_height,
-                                         tile_width, tile_height))
+                                SDL_Rect(x * tile_width * SCALE, y * tile_height * SCALE,
+                                         tile_width * SCALE, tile_height * SCALE))
     for sprite in sprites:
         if sprite.flip_x:
             flip = SDL_FLIP_HORIZONTAL
@@ -92,8 +94,9 @@ def draw_all():
 
         SDL_RenderCopyEx(renderer, sprite.image,
                         SDL_Rect(sprite.start_x, sprite.start_y, sprite.width, sprite.height),
-                        SDL_Rect(sprite.x, sprite.y, sprite.width, sprite.height), 0, None, flip)
+                        SDL_Rect(sprite.x * SCALE, sprite.y * SCALE, sprite.width * SCALE, sprite.height * SCALE), 0, None, flip)
         sprite.update()
+
     SDL_RenderPresent(renderer)
     sdl2.SDL_Delay(FRAME)
 
@@ -128,7 +131,5 @@ def key_pressed(key):
 def quit():
     """
     Завершает работу графической подсистемы SDL.
-
-    :return: None
     """
     sdl2.ext.quit()

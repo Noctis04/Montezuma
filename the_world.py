@@ -1,17 +1,20 @@
-import graphics as g
+import graphics as gr
 
 class World:
-    objects = []
     count_w = 0
     count_h = 0
-    tile_map = []
     tile_width = 0
     tile_height = 0
+
+    def __init__(self):
+        self.tile_map = []
+        self.objects = []
 
     def add_object(self, game_object):
         """
         Добавить игровой объект в мир.
         """
+        #game_object.sprite_id = gr.add_sprite(game_object.sprite)
         self.objects.append(game_object)
 
     def remove_object(self, game_object):

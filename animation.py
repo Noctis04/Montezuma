@@ -1,7 +1,7 @@
 from sprite import Sprite
 
 class Animation(Sprite):
-    def __init__(self, file_name, frames, pos_x, pos_y, speed=1, cycle=True, back=False):
+    def __init__(self, file_name, frames, pos_x, pos_y, speed=1, cycle=True, back=False, ):
         """
         Инициализирует объект анимации.
 
@@ -27,6 +27,10 @@ class Animation(Sprite):
         Устанавливает параметры текущего кадра.
         """
         (self.start_x, self.start_y, self.width, self.height) = self.frames[self.frame]
+
+    def reset_frame(self):
+        self.frame = 0
+        self.setup_frame()
 
     def update(self):
         """
