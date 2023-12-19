@@ -1,8 +1,8 @@
-from game_object import GameObject
-from graphics import KEY_LEFT, KEY_RIGHT, KEY_UP
-from animation import Animation
+from platformer.game_object import GameObject
+from platformer.graphics import KEY_LEFT, KEY_RIGHT, KEY_UP
+from platformer.animation import Animation
 from skull import Skull  # Assuming the Skull class is defined in skull.py
-from the_world import World
+
 
 class Player(GameObject):
     speed_x = 4
@@ -38,7 +38,6 @@ class Player(GameObject):
 
         if is_moving_horizontal:
             self.sprite.update()
-
         else:
             self.sprite.reset_frame()
 

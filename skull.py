@@ -1,6 +1,7 @@
-from game_object import GameObject
-from animation import Animation
-import graphics as gr
+from platformer.game_object import GameObject
+from platformer.animation import Animation
+from platformer import graphics as gr
+
 
 class Skull (GameObject):
     speed_x = 2

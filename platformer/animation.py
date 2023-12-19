@@ -1,4 +1,4 @@
-from sprite import Sprite
+from platformer.sprite import Sprite
 
 class Animation(Sprite):
     def __init__(self, file_name, frames, pos_x, pos_y, speed=1, cycle=True, back=False, ):

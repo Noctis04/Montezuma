@@ -1,6 +1,5 @@
 from sdl2 import *
 import sdl2.ext
-from sprite import Sprite
 
 KEY_LEFT = SDLK_LEFT
 KEY_RIGHT = SDLK_RIGHT
@@ -53,13 +52,15 @@ def add_sprite(sprite):
     :param pos_y: Начальная позиция по оси Y.
     :return: Созданный спрайт.
     """
-    sprite.image = sdl2.ext.load_image(sdl2.ext.Resources(__file__, SPRITES).get_path(sprite.file_name))
-    if sprite.width is None:
-        sprite.width = sprite.image.w
-    if sprite.height is None:
-        sprite.height = sprite.image.h
-    sprite.image = SDL_CreateTextureFromSurface(renderer, sprite.image)
-    sprites.append(sprite)
+
+    if sprite is not None:
+        sprite.image = sdl2.ext.load_image(sdl2.ext.Resources(__file__, SPRITES).get_path(sprite.file_name))
+        if sprite.width is None:
+            sprite.width = sprite.image.w
+        if sprite.height is None:
+            sprite.height = sprite.image.h
+        sprite.image = SDL_CreateTextureFromSurface(renderer, sprite.image)
+        sprites.append(sprite)
     return len(sprites) - 1
 
 def set_sprite(sprite_id, new_sprite):
