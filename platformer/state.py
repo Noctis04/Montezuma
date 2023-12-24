@@ -20,4 +20,5 @@ class State :
          Запускает текущее состояние, если оно установлено.
         """
         if self.state is not None:
-            self.states[self.state]()
+            f = getattr(self, self.state)
+            f()

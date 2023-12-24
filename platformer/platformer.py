@@ -25,7 +25,7 @@ class PlatformerGame(State):
     def set_player(self, map_x, map_y, player_pos_x, player_pos_y):
         self.map_x = map_x
         self.map_y = map_y
-        self.player = self.player_class(self.world, gr.key_pressed, player_pos_x, player_pos_y)
+        self.player = self.player_class(self.world, player_pos_x, player_pos_y)
         self.change_level()
 
     def check_change_level(self):

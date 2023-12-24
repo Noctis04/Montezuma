@@ -15,14 +15,14 @@ class Montezuma(PlatformerGame):
         gr.init(self.window_width, self.window_height)
         super().__init__()
         self.states = {
-            'Intro': self.intro,
-            'Game': self.game
+            'intro': self.intro,
+            'game': self.game
         }
-        self.set_state('Intro')
+        self.set_state('intro')
 
     def intro(self):
         if gr.key_pressed(gr.KEY_SPACE):
-            self.set_state('Game')
+            self.set_state('game')
             gr.clear()
             self.set_player(0, 0, 30, 80)
 

@@ -6,10 +6,7 @@ class MovingPlatform(VanishingPlatform):
     speed = 5
     def __init__(self, world,x, y, width):
         super().__init__(world, x, y, width)
-        self.states = {
-            'platform1': self.platform1,
-            'platform2': self.platform2
-        }
+        self.states = ['platform1', 'platform2']
         self.set_state('platform1')
 
     def draw(self, t1, t2, t3):
