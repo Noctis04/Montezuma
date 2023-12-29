@@ -1,0 +1,26 @@
+\babel@toc {russian}{}\relax 
+\babel@toc {english}{}\relax 
+\babel@toc {russian}{}\relax 
+\babel@toc {english}{}\relax 
+\babel@toc {russian}{}\relax 
+\contentsline {section}{ВВЕДЕНИЕ}{8}{section*.5}%
+\contentsline {section}{\numberline {1}Анализ предметной области}{10}{section.1}%
+\contentsline {subsection}{\numberline {1.1}История игр жанра платформер }{10}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Игра Montezuma's Revenge }{11}{subsection.1.2}%
+\contentsline {section}{\numberline {2}Техническое задание}{13}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Основание для разработки}{13}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Цель и назначение разработки}{13}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Требования к игре}{13}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Требования пользователя к интерфейсу игры}{13}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Моделирование вариантов использования}{14}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Требования к оформлению документации}{15}{subsection.2.6}%
+\contentsline {section}{\numberline {3}Технический проект}{16}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Технические детали}{16}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Структура проекта}{17}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Рабочий проект}{20}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Классы, используемые при разработке сайта}{20}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Модульное тестирование разработанного web-сайта}{21}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Системное тестирование разработанного web-сайта}{22}{subsection.4.3}%
+\contentsline {section}{ЗАКЛЮЧЕНИЕ}{25}{section*.15}%
+\contentsline {section}{СПИСОК ИСПОЛЬЗОВАННЫХ ИСТОЧНИКОВ}{25}{Item.15}%
+\contentsline {section}{ПРИЛОЖЕНИЕ А\ Фрагменты исходного кода программы}{28}{section*.17}%
