@@ -21,8 +21,10 @@ class Level(World):
                 if i == len(cells):
                     i = 0
 
+
 Tile = IntEnum('Tile', ['EMPTY', 'BRICK', 'COL', 'ROPE_TOP', 'BRICK2', 'ROPE', 'PLATFORM',
-                         'TRACK_L1', 'TRACK_1', 'TRACK_R1', 'TRACK_L2', 'TRACK_2', 'TRACK_R2'], start=0)
+                         'TRACK_L1', 'TRACK_1', 'TRACK_R1', 'TRACK_L2', 'TRACK_2', 'TRACK_R2',
+                         'TRACK_L3', 'TRACK_3', 'TRACK_R3', 'STAIRS_TOP1', 'STAIRS_TOP2', 'STAIRS1', 'STAIRS2'], start=0)
 
 class LevelAllBricks(Level):
     def __init__(self):
@@ -54,9 +56,11 @@ class Level1(LevelAllBricks):
         #self.add_object(Skull(self, 90, 102))
 
 
-# class Level2(LevelAllBricks):
-#     def __init__(self):
-#         super().__init__()
-#         self.fill([Tile.EMPTY], 0, 4, None, 10)
-#         #self.fill(0, 30, 5, 6, 11)
-#         self.add_object(Skull(self, 90, 102))
+class Level2(LevelAllBricks):
+    def __init__(self):
+        super().__init__()
+        self.fill([Tile.EMPTY], 0, 5, None, 4)
+        self.fill([Tile.BRICK], 12, 5, 17, 1)
+        self.fill([Tile.EMPTY], 16, 4, 9, 2)
+        self.fill([Tile.EMPTY], 17, 3, 7, 1)
+        self.fill([Tile.ROPE], 20, 0, 1, 5)

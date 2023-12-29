@@ -42,6 +42,14 @@ class PlatformerGame(State):
             self.map_x -= 1
             self.change_level()
             self.player.x = gr.window_width - self.player.width
+        elif self.player.y <= - self.player.height:
+            self.map_y -= 1
+            self.change_level()
+            self.player.y = gr.window_height - self.player.height
+        elif self.player.y > gr.window_height:
+            self.map_y += 1
+            self.change_level()
+            self.player.y = 0
 
     def change_level(self):
         level = self.levels_map[self.map_y][self.map_x]

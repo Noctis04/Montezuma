@@ -6,7 +6,7 @@ class MovingPlatform(VanishingPlatform):
     speed = 5
     def __init__(self, world,x, y, width):
         super().__init__(world, x, y, width)
-        self.states = ['platform1', 'platform2']
+        self.states = ['platform1', 'platform2', 'platform3']
         self.set_state('platform1')
 
     def draw(self, t1, t2, t3):
@@ -21,6 +21,12 @@ class MovingPlatform(VanishingPlatform):
 
     def platform2(self):
         self.draw(level.Tile.TRACK_L2, level.Tile.TRACK_2, level.Tile.TRACK_R2)
+        if self.current_frame == self.speed:
+            self.current_frame = 0
+            self.set_state('platform3')
+
+    def platform3(self):
+        self.draw(level.Tile.TRACK_L3, level.Tile.TRACK_3, level.Tile.TRACK_R3)
         if self.current_frame == self.speed:
             self.current_frame = 0
             self.set_state('platform1')

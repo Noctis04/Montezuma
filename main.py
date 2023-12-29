@@ -1,6 +1,6 @@
 from platformer.platformer import PlatformerGame
 import platformer.graphics as gr
-from level import Level1
+from level import Level1, Level2
 
 
 
@@ -8,7 +8,8 @@ from level import Level1
 class Montezuma(PlatformerGame):
     window_width = 320
     window_height = 200
-    levels_class_map = [[Level1]]
+    levels_class_map = [[Level1],
+                        [Level2]]
 
     def __init__(self):
         gr.SPRITES = "..\Images"
@@ -21,7 +22,7 @@ class Montezuma(PlatformerGame):
         self.set_state('intro')
 
     def intro(self):
-        if gr.key_pressed(gr.KEY_SPACE):
+        if gr.key_pressed(gr.KEY_ECS):
             self.set_state('game')
             gr.clear()
             self.set_player(0, 0, 30, 80)

@@ -1,6 +1,6 @@
 import level
 from platformer.game_object import GameObject
-import platformer.graphics as gr
+
 
 class VanishingPlatform(GameObject):
     visible_frames = 60
